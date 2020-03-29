@@ -1,0 +1,10 @@
+//Train the model (cpu)
+python .\train.py .\data --save_dir .\checkpoints\cat_dog_classifier_vgg16.pth --arch vgg16 --epochs 3
+
+//Train the model (gpu)
+python .\train.py .\data --save_dir .\checkpoints\cat_dog_classifier_vgg16.pth --arch vgg16 --epochs 3 --gpu
+
+//Evaluate the model
+python .\predict.py  .\data\valid\cats\cat.4001.jpg .\checkpoints\cat_dog_classifier_vgg16.pth
+python .\predict.py  .\data\valid\cats\cat.4003.jpg .\checkpoints\cat_dog_classifier_vgg16.pth
+python .\predict.py  .\data\valid\dogs\dog.4003.jpg .\checkpoints\cat_dog_classifier_vgg16.pth
